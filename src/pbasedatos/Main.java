@@ -19,7 +19,6 @@ public class Main extends javax.swing.JFrame {
     
     jpAdd mijpAdd = new jpAdd();
     jpUpdate mijpUpdate = new jpUpdate();
-    jpSearch mijpSearch = new jpSearch();
     
     public Main() {
         initComponents();
@@ -183,7 +182,6 @@ public class Main extends javax.swing.JFrame {
         notaRecogido = jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 1);
         refRecogido = jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 2);
         
-
     }//GEN-LAST:event_jTAlumnosMouseClicked
 
     private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
