@@ -90,11 +90,15 @@ public class jpUpdate extends javax.swing.JFrame {
 
     private void btnConfirmarAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarAddActionPerformed
         log.updateAlumno(tNombre.getText(), Integer.valueOf(tNota.getText()), tRef.getText());
-        
+        this.limpiarjpAdd();
         // Cierra el Jframe
         this.dispose();
     }//GEN-LAST:event_btnConfirmarAddActionPerformed
-
+    public void limpiarjpAdd() {
+        tNombre.setText(null);
+        tNota.setText(null);
+        tRef.setText(null);
+    }
     /**
      * @param args the command line arguments
      */

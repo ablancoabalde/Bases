@@ -1,33 +1,27 @@
 package pbasedatos;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class Main extends javax.swing.JFrame {
-    
-    public static DefaultTableModel modelo = new DefaultTableModel();
-    
-    Logica log = new Logica();
+
+    public static DefaultTableModel modelo=new DefaultTableModel();
+
+    Logica log=new Logica();
     Alumno alumno;
     Object refRecogido;
     Object nombreRecogido;
     Object notaRecogido;
-    
-    jpAdd mijpAdd = new jpAdd();
-    jpUpdate mijpUpdate = new jpUpdate();
-    
+
+    jpAdd mijpAdd=new jpAdd();
+    jpUpdate mijpUpdate=new jpUpdate();
+
     public Main() {
         initComponents();
-//        this.getContentPane().add(mijpAdd);
-//        this.getContentPane().add(mijpUpdate);
-        modelo = (DefaultTableModel) jTAlumnos.getModel();
-        
+        modelo=(DefaultTableModel) jTAlumnos.getModel();
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -145,43 +139,48 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        
+
         mijpAdd.setVisible(true);
 
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        
-        if (refRecogido == null) {
+
+        if (refRecogido==null) {
             JOptionPane.showMessageDialog(null, "Ningun Alumno seleccionado", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            
+
         } else {
             log.deleteAlumno(String.valueOf(refRecogido));
-            refRecogido = null;
+            refRecogido=null;
+            nombreRecogido=null;
+            notaRecogido=null;
         }
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
-        
-        if (refRecogido == null) {
+
+        if (refRecogido==null) {
             JOptionPane.showMessageDialog(null, "Ningun Alumno seleccionado", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            
+
         } else {
             mijpUpdate.setVisible(true);
 
             mijpUpdate.tNombre.setText(String.valueOf(nombreRecogido));
             mijpUpdate.tNota.setText(String.valueOf(notaRecogido));
             mijpUpdate.tRef.setText(String.valueOf(refRecogido));
+            refRecogido=null;
+            nombreRecogido=null;
+            notaRecogido=null;
         }
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void jTAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTAlumnosMouseClicked
-        
-        nombreRecogido = jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 0);
-        notaRecogido = jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 1);
-        refRecogido = jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 2);
-        
+
+        nombreRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 0);
+        notaRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 1);
+        refRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 2);
+
     }//GEN-LAST:event_jTAlumnosMouseClicked
 
     private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed

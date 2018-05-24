@@ -10,9 +10,9 @@ public class Alumno {
     }
 
     public Alumno(String nombre, int nota, String ref) {
-        this.nombre = nombre;
-        this.nota = nota;
-        this.ref = ref;
+        this.nombre=nombre;
+        this.nota=nota;
+        this.ref=ref;
     }
 
     public String getNombre() {
@@ -20,7 +20,7 @@ public class Alumno {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre=nombre;
     }
 
     public int getNota() {
@@ -28,7 +28,7 @@ public class Alumno {
     }
 
     public void setNota(int nota) {
-        this.nota = nota;
+        this.nota=nota;
     }
 
     public String getRef() {
@@ -36,12 +36,12 @@ public class Alumno {
     }
 
     public void setRef(String ref) {
-        this.ref = ref;
+        this.ref=ref;
     }
 
     @Override
     public String toString() {
-        return "Alumno: " + "nombre=" + nombre + ", nota:  " + nota + ", ref: " + ref;
+        return "Alumno: "+"nombre="+nombre+", nota:  "+nota+", ref: "+ref;
     }
 
 }
