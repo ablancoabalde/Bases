@@ -4,15 +4,19 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Main extends javax.swing.JFrame {
-
+    
+    // Instancio modelo de la tabla para llamarlo en otros Jframe
     public static DefaultTableModel modelo=new DefaultTableModel();
-
-    Logica log=new Logica();
+    
+    // Creamos las variables que van a almacenar los datos recogidos
+    
     Alumno alumno;
     Object refRecogido;
     Object nombreRecogido;
     Object notaRecogido;
-
+    
+    // Llamadas a las otras clases y Frames
+    Logica log=new Logica();
     jpAdd mijpAdd=new jpAdd();
     jpUpdate mijpUpdate=new jpUpdate();
 
@@ -145,7 +149,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-
+        // Si la variable refRecogido está vacia salta aviso
         if (refRecogido==null) {
             JOptionPane.showMessageDialog(null, "Ningun Alumno seleccionado", "Advertencia", JOptionPane.WARNING_MESSAGE);
 
@@ -176,7 +180,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void jTAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTAlumnosMouseClicked
-
+        // Guardar los valores de la tabla en cada variable
         nombreRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 0);
         notaRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 1);
         refRecogido=jTAlumnos.getValueAt(jTAlumnos.getSelectedRow(), 2);
