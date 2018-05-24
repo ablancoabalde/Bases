@@ -12,6 +12,8 @@ public class Logica {
     public void conectar() {
         try {
             // Funcion que permite abrir la base de datos creada
+           // en este caso la URL solo es miBd.bd, pues la cree dentro de la carpeta del proyecto
+           // Si se encontrase en otro ubicación abría que poner la URL
             connect=DriverManager.getConnection("jdbc:sqlite:miBd.bd");
 
         } catch (SQLException ex) {
@@ -29,8 +31,8 @@ public class Logica {
         }
     }
     
-    // Recarga la tabla, 
-    public void btnConectar(DefaultTableModel modelo) {
+    // Metodo que carga los datos de la base y en este caso los muestra por una Tabla del Neatbeans
+    public void btnCargar(DefaultTableModel modelo) {
         this.conectar();
 
         // Limpia la tabla
@@ -60,7 +62,8 @@ public class Logica {
         this.desconectar();
 
     }
-
+    
+    // Metodo que agrega un Alumno a la tabla Alumno
     public void addAlumno(Alumno alumno) {
         this.conectar();
         try {
@@ -80,9 +83,10 @@ public class Logica {
         }
         this.desconectar();
         
-        this.btnConectar(Main.modelo);
+        this.btnCargar(Main.modelo);
     }
 
+    // Metodo que elimina un Alumno de la tabla Alumno a traves de la Refencia de este
     public void deleteAlumno(String ref) {
         this.conectar();
 
@@ -99,9 +103,10 @@ public class Logica {
         }
 
         this.desconectar();
-        this.btnConectar(Main.modelo);
+        this.btnCargar(Main.modelo);
     }
 
+        // Metodo que actualiza un Alumno de la tabla alumno, por unos valores nuevos que recibe
     public void updateAlumno(String nombre, int nota, String ref) {
         this.conectar();
 
@@ -117,9 +122,10 @@ public class Logica {
         }
 
         this.desconectar();
-        this.btnConectar(Main.modelo);
+        this.btnCargar(Main.modelo);
     }
-
+    
+    // Metodo que busca un Alumno a traves de una referencia y lo carga en un table del NeatBeans
     public void searchAlumno(DefaultTableModel modelo, String ref) {
         this.conectar();
         // Limpia la tabla
